@@ -1,5 +1,3 @@
-package introtojava;
-
 import java.util.Scanner;
 
 public class ConsoleExercises {
