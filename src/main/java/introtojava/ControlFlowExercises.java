@@ -75,5 +75,7 @@ public class ControlFlowExercises {
         } else {
             System.out.println("Your grade is an F.");
         }
+
+        userInput.close();
     }
 }
