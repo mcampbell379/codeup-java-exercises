@@ -11,7 +11,7 @@ public class ControlFlowExercises {
         int itwos = 0;
         do {
             itwos += 2;
-
-        }while(itwos <= 100);
+            System.out.printf("%n%3d", itwos);
+        }while(itwos < 100);
     }
 }
