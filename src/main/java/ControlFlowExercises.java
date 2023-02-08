@@ -46,9 +46,10 @@ public class ControlFlowExercises {
         System.out.print("What number would you like to go up to? ");
         int count = 1;
         int userInt = userInput.nextInt();
-        System.out.println("Here is your table!\n");
 
         System.out.println("""
+                Here is your table!
+                
                 number | squared | cubed
                 ------ | ------- | -----""");
 
