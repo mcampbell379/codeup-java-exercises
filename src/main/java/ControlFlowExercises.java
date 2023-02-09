@@ -47,11 +47,12 @@ public class ControlFlowExercises {
         int count = 1;
         int userInt = userInput.nextInt();
 
-        System.out.println("""
+        System.out.print("""
                 Here is your table!
                 
                 number | squared | cubed
-                ------ | ------- | -----""");
+                ------ | ------- | -----
+                """);
 
         while(count <= userInt) {
             System.out.printf("%-6d | %-7d | %-6d%n", count, (int)Math.pow(count, 2), (int)Math.pow(count, 3));
