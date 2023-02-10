@@ -14,12 +14,9 @@ public class MethodsExercises {
         System.out.println(getInteger(1, 10));
         System.out.println();
 
-        System.out.print("Enter an integer from 1 to 10: ");
-        int userNum = userInput.nextInt();
-        System.out.println("Your factorial is: " + factorial(userNum));
-        System.out.println();
-        userInput.close();
+        factorial();
 
+        userInput.close();
         diceRoll();
         System.out.println();
     }
@@ -62,11 +59,16 @@ public class MethodsExercises {
         }
     }
 
-    public static int factorial(int num) {
-        for(int i = num-1; i > 1; i--){
-            num *= i;
-        }
-        return num;
+    public static String factorial() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Enter an integer between 1 and 10");
+        int userChoice = userInput.nextInt();
+        if(userChoice <= 10 && userChoice >= 1) {
+            for (int i = userChoice - 1; i > 1; i--) {
+                userChoice *= i;
+            }
+            return "Your factorial is" + userChoice;
+        } else return "Sorry your choice was invalid.";
     }
 
     public static int randomNum(int max) {
