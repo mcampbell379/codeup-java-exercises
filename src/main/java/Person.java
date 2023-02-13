@@ -18,8 +18,8 @@ public class Person {
         person2.sayHello();
     }
 
-    public Person(String n){
-        name = n;
+    public Person(String name) {
+        this.name = name;
     }
 
     public String getName(){
