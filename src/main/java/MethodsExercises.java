@@ -14,7 +14,8 @@ public class MethodsExercises {
         System.out.println(getInteger(1, 10));
         System.out.println();
 
-        factorial();
+        factorial(4);
+        System.out.println(factorialRecursion(4));
 
         userInput.close();
         diceRoll();
@@ -59,20 +60,21 @@ public class MethodsExercises {
         }
     }
 
-    public static String factorial() {
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("Enter an integer between 1 and 10");
-        int userChoice = userInput.nextInt();
-        if(userChoice <= 10 && userChoice >= 1) {
-            for (int i = userChoice - 1; i > 1; i--) {
-                userChoice *= i;
-            }
-            return "Your factorial is" + userChoice;
-        } else return "Sorry your choice was invalid.";
+    public static void factorial(int num) {
+        long answer = 1;
+        for (int i = 1; i <= num; i++) {
+            answer *= num;
+        }
     }
 
+    public static long factorialRecursion(int num){
+        if(num == 1){
+            return 1;
+        }
+        return factorialRecursion(num - 1) * num;
+    }
     public static int randomNum(int max) {
-        return (int)Math.floor(Math.random() * max + 1);
+        return (int) Math.floor(Math.random() * max + 1);
     }
 
     public static void diceRoll() {
@@ -86,19 +88,19 @@ public class MethodsExercises {
         do {
             System.out.println("Press ENTER to roll the dice...");
             String response = userInput.nextLine();
-            if(response.equals("")){
+            if (response.equals("")) {
                 System.out.println("Dice 1: " + randomNum(diceSides));
                 System.out.println("Dice 2: " + randomNum(diceSides));
 
                 System.out.print("\nWould you like to roll again? Yes/No: ");
                 String exitChoice = userInput.nextLine();
-                if(exitChoice.equalsIgnoreCase("yes")){
+                if (exitChoice.equalsIgnoreCase("yes")) {
                     userExitChoice = true;
-                } else if(exitChoice.equalsIgnoreCase("no")){
+                } else if (exitChoice.equalsIgnoreCase("no")) {
                     userExitChoice = false;
                 }
 
             }
-        }while(userExitChoice);
+        } while (userExitChoice);
     }
 }
