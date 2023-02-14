@@ -15,13 +15,17 @@ public class Input {
 
     public String getString() {
         //TODO: get a string from the user in console
-        System.out.print("Enter a phrase: ");
         return scanner.nextLine();
     }
 
     public boolean yesNo() {
         //TODO: asks the user yes or no and returns true if the user enters yes or variations of, false otherwise
-        System.out.println("Yes/No");
+        String userYesNo = scanner.next();
+        return userYesNo.equalsIgnoreCase("yes");
+    }
+
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
         String userYesNo = scanner.next();
         return userYesNo.equalsIgnoreCase("yes");
     }
@@ -39,8 +43,6 @@ public class Input {
     }
 
     public int getInt() {
-        //TODO: asks the user for an int
-        System.out.print("Enter a number: ");
         return scanner.nextInt();
     }
 
@@ -57,8 +59,6 @@ public class Input {
     }
 
     public double getDouble() {
-        //TODO: gets a double from the user
-        System.out.print("Enter a decimal: ");
         return scanner.nextDouble();
     }
 }
