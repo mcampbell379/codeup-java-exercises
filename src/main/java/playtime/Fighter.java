@@ -5,7 +5,8 @@ public class Fighter {
 
     private String name;
 
-    private int strength;
+    // protected makes private accessible to this class and its subclasses
+    protected int strength;
 
 //    private String weaponName;
 //    private int weaponDamage;

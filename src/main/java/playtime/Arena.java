@@ -19,11 +19,11 @@ public class Arena {
 
         bob.taunt();
         kai.taunt();
-        kai.hit(bob);
-        kai.hit(bob);
-        kai.hit(bob);
+
+        kai.throwShuriken(bob);
         kai.jump();
 
+        System.out.println();
         System.out.println("Bobs health is: " + bob.getHealth());
         System.out.println("Sues health is: " + kai.getHealth());
 
