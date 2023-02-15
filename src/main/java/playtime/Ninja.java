@@ -32,5 +32,8 @@ public class Ninja extends Fighter {
         System.out.println("あなたのお母さん\n");
     }
 
-
+    @Override
+    public String toString() {
+        return "I am a ninja.";
+    }
 }
