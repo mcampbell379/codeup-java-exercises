@@ -17,6 +17,11 @@ public class Input {
         //TODO: get a string from the user in console
         return scanner.nextLine();
     }
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        //TODO: get a string from the user in console
+        return scanner.nextLine();
+    }
 
     public boolean yesNo() {
         //TODO: asks the user yes or no and returns true if the user enters yes or variations of, false otherwise
