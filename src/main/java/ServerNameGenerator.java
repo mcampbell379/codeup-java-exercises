@@ -1,38 +1,20 @@
-
+import java.util.Random;
 
 public class ServerNameGenerator {
-
+    private static Random random = new Random();
     private static String [] nouns = {"table","car","banana","money","music","love","dog","cat","time","family"};
-    private static String [] adjectives;
+    private static String [] adjectives = {"adorable", "adventurous", "aggressive", "busy", "beautiful", "bright", "calm", "cautious", "crazy", "dangerous"};
 
-//    public static void main(String[] args) {
-//        ServerNameGenerator sng = new ServerNameGenerator();
-//    }
-    public ServerNameGenerator(String[] adjs, String[] nouns) {
-        this.adjectives = new String[]{"adorable", "adventurous", "aggressive", "busy", "beautiful", "bright", "calm", "cautious", "crazy", "dangerous"};
-        this.nouns = nouns;
+    public static String getRandomString(String[] strings){
+        int rndNum = random.nextInt(strings.length);
+        return strings[rndNum];
     }
+    public static void main(String[] args) {
+        String rndNoun = (getRandomString(nouns));
+        String rndAdj = (getRandomString(adjectives));
 
-    // accessors
-
-    public String[] getAdjs() {
-        return adjectives;
-    }
-
-    public void setAdjs(String[] adjs) {
-        this.adjectives = adjs;
-    }
-
-    public String[] getNouns() {
-        return nouns;
-    }
-
-    public void setNouns(String[] nouns) {
-        this.nouns = nouns;
-    }
-
-    public String getSingleString(String[] stringArr){
-        int randomIndex = (int)Math.random() * (stringArr.length) + 1;
-        return stringArr[randomIndex];
+        System.out.printf("""
+                Here is your server name:
+                %s-%s""", rndAdj, rndNoun);
     }
 }
