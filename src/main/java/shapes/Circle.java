@@ -1,12 +1,16 @@
 package shapes;
 
 public class Circle {
-    private double radius;
     private static int circleCounter;
+    private final double radius;
 
     public Circle(double radius) {
         this.radius = radius;
         circleCounter++;
+    }
+
+    public static int getCircleCounter() {
+        return circleCounter;
     }
 
     // accessors
@@ -14,15 +18,11 @@ public class Circle {
         return radius;
     }
 
-    public static int getCircleCounter() {
-        return circleCounter;
+    public double getArea() {
+        return Math.PI * Math.pow(this.getRadius(), 2);
     }
 
-    public double getArea(){
-        return Math.PI * Math.pow(this.getRadius(),2);
-    }
-
-    public double getCircumference(){
+    public double getCircumference() {
         return 2 * Math.PI * this.getRadius();
     }
 }

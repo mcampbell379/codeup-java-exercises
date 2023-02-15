@@ -1,4 +1,5 @@
 package shapes;
+
 import util.Input;
 
 public class CircleApp {
@@ -16,10 +17,10 @@ public class CircleApp {
             System.out.println("The Circumference of your circle is: " + circle.getCircumference());
 
             boolean done = userInput.yesNo("Continue? (Y/N)");
-            if(done){
+            if (done) {
                 System.out.println("You made " + circle);
                 break;
             }
-        } while(true);
+        } while (true);
     }
 }
