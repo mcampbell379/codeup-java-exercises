@@ -31,7 +31,7 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        //TODO: asks the user for an int between min and max **recurssion**
+        //TODO: asks the user for an int between min and max **recursion**
         System.out.print("Enter a number between " + min + " and " + max + ": ");
         int userInt = scanner.nextInt();
         scanner.nextLine();
@@ -46,8 +46,13 @@ public class Input {
         return scanner.nextInt();
     }
 
+    public int getInt(String prompt) {
+        System.out.println(prompt);
+        return scanner.nextInt();
+    }
+
     public double getDouble(double min, double max) {
-        //TODO: gets a double from the user as long as its in between the min an max **recurssion**
+        //TODO: gets a double from the user as long as its in between the min an max **recursion**
         System.out.print("Enter a decimal number between " + min + " and " + max + ": ");
         double userDouble = scanner.nextDouble();
         scanner.nextLine();
