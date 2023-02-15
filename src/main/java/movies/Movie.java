@@ -24,4 +24,10 @@ public class Movie {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    @Override
+    public String toString() {
+        return name + " -- " +
+               category;
+    }
 }

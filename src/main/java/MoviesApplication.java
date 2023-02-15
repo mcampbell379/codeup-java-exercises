@@ -51,9 +51,40 @@ public class MoviesApplication {
     private static void doChoice(int choice) {
         switch(choice) {
             case 1:
-                // call function to view all movies
+                printAllMovies();
+                break;
+            case 2:
+                printMoviesByCategory("animated");
+                break;
+            case 3:
+                printMoviesByCategory("drama");
+                break;
+            case 4:
+                printMoviesByCategory("horror");
+                break;
+            case 5:
+                printMoviesByCategory("scifi");
                 break;
         }
     }
+
+    private static void printMoviesByCategory(String category) {
+        for (Movie movie : movies) {
+            if(movie.getCategory().equals(category)){
+                System.out.println(movie);
+            }
+        }
+        System.out.println();
+    }
+
+    private static void printAllMovies() {
+        // print all movies to console using a toString method in Movie.java
+        for (Movie movie : movies) {
+            System.out.println(movie);
+        }
+        System.out.println();
+    }
+
+
 
 }
