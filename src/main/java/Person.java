@@ -30,6 +30,13 @@ public class Person {
         name = newName;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
     public void sayHello(){
         System.out.println("Hello from " + name + "!");
     }
