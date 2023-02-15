@@ -56,8 +56,7 @@ public class MoviesApplication {
         Movie[] moviesArr = MoviesArray.findAll();
 
         System.out.println("What would you like to do?");
-        for (int i = 0; i < moviesArr.length; i++) {
-            System.out.println("""
+        System.out.println("""
                     0 - exit
                     1 - view all movies
                     2 - view movies in the animated category
@@ -68,7 +67,9 @@ public class MoviesApplication {
                     Enter your choice: \s
                     """);
 
-            int userChoice = userInput.getInt();
+        int userChoice = userInput.getInt();
+        for (int i = 0; i < moviesArr.length; i++) {
+
             if(userChoice == 0){
                 break;
             } else if (userChoice == 1) {

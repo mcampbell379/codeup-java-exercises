@@ -5,20 +5,19 @@ public class ArrayExercises {
         Person[] people = new Person[3];
         Arrays.fill(people, new Person("Emi"));
 
-        Person[] newPeople = addPerson(people, new Person("bobby"));
+        people = addPerson(people, new Person("Lou"));
+        System.out.println(Arrays.toString(people));
 
 
-        for (int i = 0; i < newPeople.length; i++) {
-            System.out.println(newPeople[i]);
+        for (Person person : people) {
+            System.out.println(person);
         }
     }
 
-    public static Person[] addPerson(Person[] people , Person perp){
-        Person[] newPeople = new Person[people.length + 1];
-        for (int i = 0; i < people.length; i++) {
-            Arrays.fill(newPeople, people[i]);
-        }
-        newPeople[people.length] = perp;
+    public static Person[] addPerson(Person[] people , Person newPerp){
+        Person[] newPeople = Arrays.copyOf(people, people.length + 1);
+
+        newPeople[people.length - 1] = newPerp;
         return newPeople;
     }
 }
