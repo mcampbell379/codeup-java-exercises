@@ -7,12 +7,12 @@ public class Rectangle extends Quadrilateral implements Measurable{
     }
 
     @Override
-    public double setLength(double length) {
-        return length;
+    public void setLength(double length) {
+        this.length = length;
     }
 
     @Override
-    public double setWidth(double width) {
-        return width;
+    public void setWidth(double width) {
+        this.width = width;
     }
 }
