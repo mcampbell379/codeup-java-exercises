@@ -31,8 +31,8 @@ public class Input {
 
     public boolean yesNo(String prompt) {
         System.out.println(prompt);
-        String userYesNo = scanner.next();
-        return userYesNo.equalsIgnoreCase("yes");
+        String userYesNo = scanner.nextLine();
+        return userYesNo.startsWith("y");
     }
 
     public int getInt(int min, int max) {
