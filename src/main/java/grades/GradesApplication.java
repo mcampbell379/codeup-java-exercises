@@ -1,7 +1,9 @@
 package grades;
 
 import util.Input;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Set;
 
 public class GradesApplication {
     public static void main(String[] args) {
@@ -36,7 +38,7 @@ public class GradesApplication {
         // CLI
         System.out.println("""
                 Welcome!
-                
+                                
                 Here are the Github usernames of our students: 
                 """);
         String githubUsernames = String.join(" | ", keys);
@@ -44,18 +46,18 @@ public class GradesApplication {
 
         boolean exitChoice;
 
-        do{
+        do {
 
             String usernameSearch = userInput.getString("\n\nWhat student would you like to get Information on? ");
 
-            if(!students.containsKey(usernameSearch)) {
+            if (!students.containsKey(usernameSearch)) {
                 System.out.println("Sorry, no student found with the GitHub username of \"" + usernameSearch + "\"");
             } else {
-                System.out.println("\n"+students.get(usernameSearch).toString());
+                System.out.println("\n" + students.get(usernameSearch).toString());
             }
 
             exitChoice = userInput.yesNo("Would you like to see another student?");
-        }while(exitChoice);
+        } while (exitChoice);
 
         System.out.println("Goodbye, and have a wonderful day!");
     }
