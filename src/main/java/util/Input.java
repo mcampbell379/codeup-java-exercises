@@ -7,7 +7,7 @@ public class Input {
 
     }
 
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public Input() {
         scanner = new Scanner(System.in);
@@ -38,37 +38,67 @@ public class Input {
     public int getInt(int min, int max) {
         //TODO: asks the user for an int between min and max **recursion**
         System.out.print("Enter a number between " + min + " and " + max + ": ");
-        int userInt = scanner.nextInt();
-        if (userInt <= min || userInt >= max) {
-            System.out.println("Try again.");
-            getInt(min, max);
+        int userInt = 0;
+        try {
+            String s = getString();
+            userInt = Integer.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("Please enter a valid number.");
+            userInt = getInt();
         }
         return userInt;
     }
 
     public int getInt() {
-        return scanner.nextInt();
+        System.out.print("Enter a number: ");
+        int userInt = 0;
+        try {
+            String s = getString();
+            userInt = Integer.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("Please enter a valid number.");
+            userInt = getInt();
+        }
+        return userInt;
     }
 
     public int getInt(String prompt) {
         System.out.println(prompt);
-        return scanner.nextInt();
+        int userInt = 0;
+        try {
+            String s = getString();
+            userInt = Integer.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("Please enter a valid number.");
+            userInt = getInt();
+        }
+        return userInt;
     }
 
     public double getDouble(double min, double max) {
         //TODO: gets a double from the user as long as its in between the min an max **recursion**
         System.out.print("Enter a decimal number between " + min + " and " + max + ": ");
-        double userDouble = scanner.nextDouble();
-        scanner.nextLine();
-        if (userDouble <= min || userDouble >= max) {
-            System.out.println("Try again.");
-            getDouble(min, max);
+        double userDouble = 0;
+        try {
+            String s = getString();
+            userDouble = Double.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("Please enter a valid number.");
+            userDouble = getDouble();
         }
         return userDouble;
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        double userDouble = 0;
+        try {
+            String s = getString();
+            userDouble = Double.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("Please enter a valid number.");
+            userDouble = getDouble();
+        }
+        return userDouble;
     }
 
     // accessors
