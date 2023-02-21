@@ -38,7 +38,7 @@ public class Input {
     public int getInt(int min, int max) {
         //TODO: asks the user for an int between min and max **recursion**
         System.out.print("Enter a number between " + min + " and " + max + ": ");
-        int userInt = 0;
+        int userInt;
         try {
             String s = getString();
             userInt = Integer.valueOf(s);
@@ -51,7 +51,7 @@ public class Input {
 
     public int getInt() {
         System.out.print("Enter a number: ");
-        int userInt = 0;
+        int userInt;
         try {
             String s = getString();
             userInt = Integer.valueOf(s);
@@ -64,7 +64,7 @@ public class Input {
 
     public int getInt(String prompt) {
         System.out.println(prompt);
-        int userInt = 0;
+        int userInt;
         try {
             String s = getString();
             userInt = Integer.valueOf(s);
@@ -99,6 +99,34 @@ public class Input {
             userDouble = getDouble();
         }
         return userDouble;
+    }
+
+    public int getBinary () {
+        int userInt = 0;
+
+        String s = getString();
+        try {
+            userInt = Integer.valueOf(s, 2);
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a valid number");
+            userInt = getBinary();
+        }
+
+        return userInt;
+    }
+
+    public int getHex () {
+        int userInt = 0;
+
+        String s = getString();
+        try {
+            userInt = Integer.valueOf(s, 16);
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a valid number");
+            userInt = getHex();
+        }
+
+        return userInt;
     }
 
     // accessors
