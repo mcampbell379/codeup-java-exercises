@@ -7,7 +7,7 @@ public class Input {
 
     }
 
-    private final Scanner scanner;
+    private Scanner scanner;
 
     public Input() {
         scanner = new Scanner(System.in);
@@ -39,7 +39,6 @@ public class Input {
         //TODO: asks the user for an int between min and max **recursion**
         System.out.print("Enter a number between " + min + " and " + max + ": ");
         int userInt = scanner.nextInt();
-        scanner.nextLine();
         if (userInt <= min || userInt >= max) {
             System.out.println("Try again.");
             getInt(min, max);
@@ -70,5 +69,11 @@ public class Input {
 
     public double getDouble() {
         return scanner.nextDouble();
+    }
+
+    // accessors
+
+    public Scanner getScanner() {
+        return scanner;
     }
 }
